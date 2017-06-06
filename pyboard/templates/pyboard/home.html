@@ -1,0 +1,25 @@
+<html xmlns="http://www.w3.org/1999/html">
+    <body ng-app="pyboard.app">
+
+    {% verbatim %}
+    <div ng-controller="PyboardController">
+        {{preson.name}} is {{preson.age}} years old.
+    </div>
+    {% endverbatim %}
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script>
+        (function(){
+            'use strict';
+            angular.module('pyboard.app',[])
+                .controller('PyboardController', ['$scope',PyboardController]);
+
+            function PyboardController($scope) {
+                $scope.preson = {
+                name: 'Joe',
+                age: 35
+                };
+             }
+        }());
+    </script>
+    </body>
+</html>
