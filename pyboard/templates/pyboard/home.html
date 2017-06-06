@@ -3,7 +3,12 @@
 
     {% verbatim %}
     <div ng-controller="PyboardController">
-        {{preson.name}} is {{preson.age}} years old.
+        <div ng-repeat="list in data">
+            <h3>{{list.name}}</h3>
+            <ul>
+                <li ng-repeat="card in list.cards">{{card.title}}</li>
+            </ul>
+        </div>
     </div>
     {% endverbatim %}
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -14,11 +19,37 @@
                 .controller('PyboardController', ['$scope',PyboardController]);
 
             function PyboardController($scope) {
-                $scope.preson = {
-                name: 'Joe',
-                age: 35
-                };
-             }
+                $scope.data = [
+                    {
+                        name: 'pyboard1',
+                        cards: [
+                            {
+                                title: 'TestA1'
+                            },
+                            {
+                                title: 'TestB1'
+                            },
+                            {
+                                title: 'TestC1'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'pyboard2',
+                        cards: [
+                            {
+                                title: 'TestA2'
+                            },
+                            {
+                                title: 'TestB2'
+                            },
+                            {
+                                title: 'TestC3'
+                            },
+                        ]
+                    }
+                ];
+            }
         }());
     </script>
     </body>
