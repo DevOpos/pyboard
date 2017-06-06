@@ -1,44 +1,20 @@
 (function(){
     'use strict';
     angular.module('pyboard.app',[])
-        .controller('PyboardController', ['$scope',PyboardController]);
+        .controller('PyboardController',
+         ['$scope','$http', PyboardController]);
 
-    function PyboardController($scope) {
+    function PyboardController($scope, $http) {
         $scope.add = function (list, title){
             var card = {
                 title: title
             }
             list.cards.push(card)
-        }
-        $scope.data = [
-            {
-                name: 'pyboard1',
-                cards: [
-                    {
-                        title: 'TestA1'
-                    },
-                    {
-                        title: 'TestB1'
-                    },
-                    {
-                        title: 'TestC1'
-                    },
-                ]
-            },
-            {
-                name: 'pyboard2',
-                cards: [
-                    {
-                        title: 'TestA2'
-                    },
-                    {
-                        title: 'TestB2'
-                    },
-                    {
-                        title: 'TestC3'
-                    },
-                ]
-            }
-        ];
+        };
+
+        $scope.data = [];
+        $http.get('/pyboard/lists').then(function(response){
+            $scope.data = response.data;
+        });
     }
 }());
