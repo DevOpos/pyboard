@@ -1,0 +1,44 @@
+html {
+    font-size: 1em;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    line-height: 1.4;
+}
+
+.list {
+    width: 20%;
+    float: left;
+    border: 1px solid grey;
+    border-radius: 7px;
+    padding: 7px;
+    margin: 7px;
+    background-color: #3C95EF;
+}
+
+.list h3 {
+    padding-left: 7px;
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card {
+    cursor: pointer;
+    background-color: #FFF3CA;
+    padding: 7px;
+    margin: 7px 0px;
+    color: #927B2C;
+    border: 1px solid grey;
+    border-radius: 6px;
+}
+
+.card h4 {
+    margin: 0px;
+}
+
+.description {
+    color: #996633;
+}
+
