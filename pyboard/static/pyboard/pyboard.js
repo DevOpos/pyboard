@@ -19,7 +19,6 @@
                 function(){
                     alert('Could not create card');
                 });
-            list.cards.push(card);
         };
 
         $scope.data = [];

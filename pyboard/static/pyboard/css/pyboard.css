@@ -42,3 +42,14 @@ ul {
     color: #996633;
 }
 
+.flex {
+    display: flex;
+}
+
+.flex input {
+    flex-grow: 2;
+}
+
+.flex-button {
+    flex-basis: auto;
+}
