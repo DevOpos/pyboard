@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name="pyboard/home.html")),
     url(r'^pyboard/', include('pyboard.urls')),
+    url(r'^auth_py_api/', include('auth_py_api.urls')),
 ]
