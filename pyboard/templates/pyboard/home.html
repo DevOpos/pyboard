@@ -6,6 +6,9 @@
             href="{% static "pyboard/css/pyboard.css" %}" >
     </head>
     <body ng-app="pyboard.app">
+        <div class="site-header">
+            <h1> Damian's Kanban PyBoard </h1>
+        </div>
         {% verbatim %}
         <div ng-controller="PyboardController">
             <div class="list" ng-repeat="list in data">

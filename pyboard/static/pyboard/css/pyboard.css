@@ -2,6 +2,11 @@ html {
     font-size: 1em;
     font-family: "Comic Sans MS", cursive, sans-serif;
     line-height: 1.4;
+
+}
+.site-header {
+    float: center;
+    color: #0059b3;
 }
 
 .list {
@@ -11,7 +16,7 @@ html {
     border-radius: 7px;
     padding: 7px;
     margin: 7px;
-    background-color: #3C95EF;
+    background-color: #0080ff;
 }
 
 .list h3 {
@@ -29,7 +34,7 @@ ul {
     background-color: #FFF3CA;
     padding: 7px;
     margin: 7px 0px;
-    color: #927B2C;
+    color: #801a00;
     border: 1px solid grey;
     border-radius: 6px;
 }
@@ -48,8 +53,22 @@ ul {
 
 .flex input {
     flex-grow: 2;
+    border-radius: 10px;
 }
 
 .flex-button {
     flex-basis: auto;
+}
+
+.card button,
+.card input,
+.card textarea {
+    color: #404040;
+    margin: 2px 0px
+    border-radius: 10px;
+}
+
+.card textarea {
+    width: 100%;
+    resize: vertical;
 }
