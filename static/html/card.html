@@ -31,6 +31,15 @@
               ng-change="update()"
               placeholder="Enter business value...">
     </textarea>
+
+    <div>
+        <label>List: </label>
+        <select ng-options="list as list.name for list in data"
+                ng-model="destList"></select>
+        <button ng-click="move()">Move</button>
+    </div>
+
     <button ng-click="edit=false">Ok</button>
     <button ng-click="delete()">Delete Card</button>
+
 </div>
