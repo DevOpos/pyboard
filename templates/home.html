@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/html">
     <head>
         <link rel="stylesheet" type="text/css"
-            href="{% static "pyboard/css/pyboard.css" %}" >
+            href="{% static "/css/pyboard.css" %}" >
     </head>
     <body ng-app="pyboard.app">
         <div class="site-header">
@@ -30,8 +30,8 @@
         {% endverbatim %}
 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-        <script src="{% static "pyboard/pyboard.js" %}"></script>
-        <script src="{% static "pyboard/pyboard.config.js" %}"></script>
-        <script src="{% static "pyboard/card.directive.js" %}"></script>
+        <script src="{% static "js/pyboard.js" %}"></script>
+        <script src="{% static "js/pyboard.config.js" %}"></script>
+        <script src="{% static "js/card.directive.js" %}"></script>
     </body>
 </html>
