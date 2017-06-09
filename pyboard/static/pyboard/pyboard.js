@@ -21,6 +21,11 @@
                 });
         };
 
+        $scope.login = function(){
+            $http.post('/auth_py_api/login/',
+                {username: 'damian', password: 'Test1234'});
+        };
+
         $scope.data = [];
         $http.get('/pyboard/lists/').then(
             function(response){

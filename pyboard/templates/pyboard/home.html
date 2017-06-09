@@ -11,6 +11,9 @@
         </div>
         {% verbatim %}
         <div ng-controller="PyboardController">
+            <button ng-click="login()">Login</button>
+            <a href="/auth_py_api/logout">Logout</a><br>
+
             <div class="list" ng-repeat="list in data">
                 <h3>{{list.name}}</h3>
                 <ul>
@@ -26,8 +29,9 @@
         </div>
         {% endverbatim %}
 
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
         <script src="{% static "pyboard/pyboard.js" %}"></script>
+        <script src="{% static "pyboard/pyboard.config.js" %}"></script>
         <script src="{% static "pyboard/card.directive.js" %}"></script>
     </body>
 </html>

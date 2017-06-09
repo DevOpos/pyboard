@@ -16,11 +16,13 @@ Including another URLconf
 
 from django.contrib import admin
 from django.conf.urls import url, include
-from  django.views.generic import TemplateView
+from django.views.generic import TemplateView
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name="pyboard/home.html")),
     url(r'^pyboard/', include('pyboard.urls')),
     url(r'^auth_py_api/', include('auth_py_api.urls')),
+    url(r'^$', ensure_csrf_cookie(TemplateView.as_view(template_name="pyboard/home.html"))),
 ]
