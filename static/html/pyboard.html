@@ -1,7 +1,13 @@
 <div class="list" ng-repeat="list in data">
     <h3>{{list.name}}</h3>
-    <div class="list-sort">
-        <hr>
+    <span class="showFilters">
+        <button ng-click="showFilters=!showFilters">
+            {{showFilters ? "Hide": "Show"}} filters
+        </button>
+    </span>
+    <hr>
+    <div class="list-sort"
+         ng-show="showFilters">
         <table>
             <tr>
                 <td></td>
@@ -17,7 +23,8 @@
                 </td>
             </tr>
             <tr>
-                <td><label>Filter: </label></td>
+                <br>
+                <td><label class="flex">Filter: </label></td>
                 <td class="flex"><input type="text" ng-model="filterBy"/></td>
             </tr>
         </table>
