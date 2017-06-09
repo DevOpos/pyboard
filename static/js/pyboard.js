@@ -1,7 +1,7 @@
 (function(){
     'use strict';
 
-    angular.module('pyboard.app',[])
+    angular.module('pyboard.app',['ngRoute'])
         .controller('PyboardController',
          ['$scope','$http', PyboardController]);
 

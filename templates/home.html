@@ -1,35 +1,17 @@
 {% load staticfiles %}
 
-<html xmlns="http://www.w3.org/1999/html">
+<html>
     <head>
         <link rel="stylesheet" type="text/css"
-            href="{% static "/css/pyboard.css" %}" >
+            href="{% static "css/pyboard.css" %}" >
     </head>
     <body ng-app="pyboard.app">
         <div class="site-header">
             <h1> Damian's Kanban PyBoard </h1>
         </div>
-        {% verbatim %}
-        <div ng-controller="PyboardController">
-            <button ng-click="login()">Login</button>
-            <a href="/auth_py_api/logout">Logout</a><br>
-
-            <div class="list" ng-repeat="list in data">
-                <h3>{{list.name}}</h3>
-                <ul>
-                    <li ng-repeat="card in list.cards">
-                        <pyboard-card></pyboard-card>
-                    </li>
-                </ul>
-                <div class="flex">
-                    <input type="text" ng-model="new_title"/>
-                    <button ng-click="add(list, new_title)">+</button>
-                </div>
-            </div>
-        </div>
-        {% endverbatim %}
-
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+        <ng-view></ng-view>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
         <script src="{% static "js/pyboard.js" %}"></script>
         <script src="{% static "js/pyboard.config.js" %}"></script>
         <script src="{% static "js/card.directive.js" %}"></script>
