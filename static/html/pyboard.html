@@ -1,21 +1,19 @@
-<div class="logout">
-    <button ng-click="logout()">Logout</button>
-</div>
 <div class="list" ng-repeat="list in data">
     <h3>{{list.name}}</h3>
     <div class="list-sort">
         <hr>
         <table>
             <tr>
-                <td><label>Sort:  </label></td>
+                <td></td>
                 </td>
-                    <select ng-model="sortBy">
+                    <label>Sort: </label><select ng-model="sortBy">
                         <option value="title">Title</option>
                         <option value="story_points">Story Points</option>
                         <option value="business_value">Bussiness Value</option>
                     </select>
+                    <br>
+                    <label>Reverse: </label>
                     <input type="checkbox" ng-model="reverse"/>
-                    <label>Reverse</label>
                 </td>
             </tr>
             <tr>
@@ -25,7 +23,6 @@
         </table>
         <hr>
     </div>
-    <input type="text" ng-model="filterBy">
     <ul>
         <li ng-repeat="card in list.cards | filter:filterBy | orderBy:sortBy:reverse">
             <pyboard-card></pyboard-card>
@@ -36,3 +33,6 @@
         <button ng-click="add(list, new_title)">+</button>
     </div>
  </div>
+<div class="logout">
+    <button ng-click="logout()">Logout</button>
+</div>

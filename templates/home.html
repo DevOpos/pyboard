@@ -6,14 +6,16 @@
             href="{% static "css/pyboard.css" %}" >
     </head>
     <body ng-app="pyboard.app">
-        <div class="site-header">
-            <h1> Damian's Kanban PyBoard </h1>
+            <div class="site-header">
+                <h1> Damian's Kanban PyBoard </h1>
+            </div>
+        <div id="page-wrap">
+            <ng-view></ng-view>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
+            <script src="{% static "js/pyboard.js" %}"></script>
+            <script src="{% static "js/pyboard.config.js" %}"></script>
+            <script src="{% static "js/card.directive.js" %}"></script>
         </div>
-        <ng-view></ng-view>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-route.js"></script>
-        <script src="{% static "js/pyboard.js" %}"></script>
-        <script src="{% static "js/pyboard.config.js" %}"></script>
-        <script src="{% static "js/card.directive.js" %}"></script>
     </body>
 </html>
