@@ -72,3 +72,9 @@ ul {
     width: 100%;
     resize: vertical;
 }
+.logout{
+    float: right;
+}
+.additional_data{
+    font-size: 0.8em;
+}

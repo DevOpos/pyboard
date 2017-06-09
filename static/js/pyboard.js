@@ -6,10 +6,12 @@
          ['$scope','$http', PyboardController]);
 
     function PyboardController($scope, $http) {
-        $scope.add = function (list, title){
+        $scope.add = function (list, title, story_points, business_value){
             var card = {
                 list: list.id,
-                title: title
+                title: title,
+                story_points: story_points,
+                business_value: business_value
 
             };
             $http.post('/pyboard/cards/', card)
@@ -21,10 +23,12 @@
                 });
         };
 
-        $scope.login = function(){
-            $http.post('/auth_py_api/login/',
-                {username: 'damian', password: 'Test1234'});
-        };
+        $scope.logout = function(){
+            $http.get('/auth_py_api/logout/')
+                .then(function () {
+                    $location.url('/login');
+                });
+        }
 
         $scope.data = [];
         $http.get('/pyboard/lists/').then(
