@@ -3,9 +3,9 @@
 
     angular.module('pyboard.app',['ngRoute'])
         .controller('PyboardController',
-         ['$scope','$http', PyboardController]);
+         ['$scope','$http','$location', PyboardController]);
 
-    function PyboardController($scope, $http) {
+    function PyboardController($scope, $http, $location) {
         $scope.add = function (list, title, story_points, business_value){
             var card = {
                 list: list.id,
